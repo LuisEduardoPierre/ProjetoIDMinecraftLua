@@ -43,11 +43,13 @@ local inteligence = 0
 local mob = ""
 local description = ""
 Emoji = ""
+local story = ""
 local sound =  ""
 local favoriteTime = ""
 local drops = ""
 --Parser do emoji
 local input = ""
+local barra ="|"
 --Personalizando de acordo com o User
 local io = require("io")
 
@@ -74,6 +76,8 @@ print("Please input the drops of the mob: ")
 drops = io.read("l")
 print("Please input the emoji of the mob: ")
 input = io.read("l")
+print("Please tell a unique story about the mob:")
+story = io.read("l")
 
 --Verificação se o emoji digitado e compativel
 
@@ -101,19 +105,27 @@ end
 
 --Cartão
 print("=========================================================")
-print("|")
-print("|" .. mob)
-print("|" ..description)
-print("|")
-print("|Emoji: " .. Emoji)
-print("|Sound: " .. sound)
-print("|Active Time: " .. favoriteTime)
-print("|Drops: " .. drops)
-print("|")
-print("| ATRIBUTOS: ")
-print("|    ATAQUE:       " .. barra_progresso(attack))
-print("|    DEFESA:       " .. barra_progresso(defense))
-print("|    VITALIDADE:   " .. barra_progresso(health))
-print("|    VELOCIDADE:   " .. barra_progresso(speed))
-print("|    INTELIGENCIA: " .. barra_progresso(inteligence))
+print("------ DADOS PESSOAIS ------ ")
+print(barra)
+print(barra.. mob)
+print(barra..description)
+print(barra)
+print(barra.."Emoji: " .. Emoji)
+print(barra.."Sound: " .. sound)
+print(barra.."Active Time: " .. favoriteTime)
+print(barra.."Drops: " .. drops)
+print(barra)
+print(barra.. "ATRIBUTOS: ")
+print(barra..    "ATAQUE:       " .. barra_progresso(attack))
+print(barra..    "DEFESA:       " .. barra_progresso(defense))
+print(barra..    "VITALIDADE:   " .. barra_progresso(health))
+print(barra..    "VELOCIDADE:   " .. barra_progresso(speed))
+print(barra..    "INTELIGENCIA: " .. barra_progresso(inteligence))
+print("=========================================================")
+print("------ HISTORIA ------ ")
+print(barra)
+print(barra .. story)
+print(barra)
+print(barra)
+print(barra.."Issue date: " .. os.date("%Y-%m-%d %H:%M:%S"))
 print("=========================================================")
